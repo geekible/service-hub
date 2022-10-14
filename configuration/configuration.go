@@ -9,9 +9,10 @@ type ServiceConfiguration struct {
 }
 
 func NewServiceConfiguration() *ServiceConfiguration {
+	//sudo docker run -d -p 6379:6379 redis redis-server --requirepass "fiesta99"
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
-		Password: "",
+		Password: "fiesta99",
 		DB:       0,
 	})
 

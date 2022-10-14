@@ -29,3 +29,10 @@ func (cache *CacheService) GetKey(key string) (string, error) {
 
 	return val, nil
 }
+
+func (cache *CacheService) RemoveKey(key string) error {
+	if err := cache.client.Del(context.Background(), key).Err(); err != nil {
+		return err
+	}
+	return nil
+}
